@@ -5,8 +5,15 @@ import java.util.Map;
 
 public class PracticeB {
     Map<String,Integer> createUpdatedCollection(Map<String,Integer> collectionA, Map<String,List<String>> object) {
-        //实现练习要求，并改写该行代码。
-
-        return null;
+        Map result = collectionA;
+        String valueProp = "value";
+        for(String key:object.get(valueProp)){
+            if(result.containsKey(key)){
+                int count = (Integer)(result.get(key));
+                int newCount = count - count/3;
+                result.put(key,newCount);
+            }
+        }
+        return result;
     }
 }
