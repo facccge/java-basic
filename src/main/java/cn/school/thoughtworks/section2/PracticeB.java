@@ -10,12 +10,13 @@ public class PracticeB {
         for(String string:collection1){
             String key="";
             int quality=0;
-            if(string.length()==1){
+            if(string.contains("-")){
+                int qualityIndex = string.indexOf("-")+1;
+                key = string.charAt(0)+"";
+                quality = Integer.parseInt(string.substring(qualityIndex,string.length())+"");
+            }else{
                 key = string;
                 quality =1;
-            }else{
-                key = string.charAt(0)+"";
-                quality = Integer.parseInt(string.charAt(2)+"");
             }
             if(result.containsKey(key)){
                 result.put(key,(Integer)(result.get(key))+quality);
