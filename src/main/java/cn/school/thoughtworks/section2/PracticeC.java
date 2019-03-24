@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class PracticeC {
     Map<String, Integer> countSameElements(List<String> collection1) {
-        Map result = new HashMap<String, Integer>(1);
+        Map<String, Integer> result = new HashMap(1);
         for (String string : collection1) {
             String key = "";
             int quality = 0;
@@ -28,7 +28,7 @@ public class PracticeC {
                 quality = 1;
             }
             if (result.containsKey(key)) {
-                result.put(key, (Integer) (result.get(key)) + quality);
+                result.put(key, result.get(key) + quality);
             } else {
                 result.put(key, quality);
             }
